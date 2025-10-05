@@ -17,6 +17,5 @@ scrot
 noto-fonts
 inter-font
 zathura
-nm-applet
 xss-lock
 mesa
