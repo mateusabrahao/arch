@@ -1,15 +1,15 @@
 #!/bin/bash
 set -e
 
-echo "[*] Updating system..."
+echo "Updating system..."
 sudo pacman -Syu --noconfirm
 
-echo "[*] Installing official packages..."
+echo "Installing official packages..."
 sudo pacman -S --needed - < packages.txt
 
-echo "[*] Checking..."
+echo "Checking..."
 if ! command -v yay &> /dev/null; then
-    echo "[*] Installing yay..."
+    echo "Installing yay..."
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si --noconfirm
@@ -17,23 +17,26 @@ if ! command -v yay &> /dev/null; then
     rm -rf yay
 fi
 
-echo "[*] Installing AUR packages..."
+echo "Installing AUR packages..."
 yay -S --needed - < aur.txt
 
-echo "[*] Setting up configuration files..."
+echo "Setting up configuration files..."
 mkdir -p ~/.config
 cp -r i3 ~/.config/
 cp -r kitty ~/.config/
 cp -r picom ~/.config/
 
-echo "[*] Setting up battery warning script..."
+echo "Setting up battery warning script..."
 mkdir -p ~/.local/bin
 cp batteryL20.sh ~/.local/bin/
 chmod +x ~/.local/bin/batteryL20.sh
 
-echo "[*] Enabling NetworkManager service..."
+echo "Enabling NetworkManager service..."
 sudo systemctl enable NetworkManager
 sudo systemctl start NetworkManager
 
-echo "[*] Configuration completed!"
+echo "Enabling TLP power management service..."
+sudo systemctl enable tlp.service
+sudo systemctl start tlp.service
 
+echo "Configuration completed!"
