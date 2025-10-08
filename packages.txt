@@ -18,5 +18,4 @@ noto-fonts
 inter-font
 zathura
 xss-lock
-mesa
 nm-applet
