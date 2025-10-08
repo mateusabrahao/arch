@@ -31,10 +31,6 @@ mkdir -p ~/.local/bin
 cp batteryL20.sh ~/.local/bin/
 chmod +x ~/.local/bin/batteryL20.sh
 
-echo "Enabling NetworkManager service..."
-sudo systemctl enable NetworkManager
-sudo systemctl start NetworkManager
-
 echo "Enabling TLP power management service..."
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
