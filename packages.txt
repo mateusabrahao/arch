@@ -10,7 +10,6 @@ mpv
 feh
 rofi
 i3lock
-xautolock
 brightnessctl
 pulseaudio
 scrot
@@ -18,4 +17,4 @@ noto-fonts
 inter-font
 zathura
 xss-lock
-nm-applet
+network-manager-applet
