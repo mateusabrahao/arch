@@ -35,4 +35,8 @@ echo "Enabling TLP power management service..."
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
 
+echo "Setting up X session..."
+echo "exec i3" > ~/.xinitrc
+chmod +x ~/.xinitrc
+
 echo "Configuration completed!"
