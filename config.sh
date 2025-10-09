@@ -5,7 +5,7 @@ echo "[*] Updating system..."
 sudo pacman -Syu --noconfirm
 
 echo "[*] Installing official packages..."
-sudo pacman -S --needed - < packages.txt
+sudo pacman -S --needed --noconfirm - < packages.txt
 
 echo "[*] Checking..."
 if ! command -v yay &> /dev/null; then
@@ -22,13 +22,13 @@ yay -S --needed - < aur.txt
 
 echo "[*] Setting up configuration files..."
 mkdir -p ~/.config
-cp -r i3 ~/.config/
-cp -r kitty ~/.config/
-cp -r picom ~/.config/
+ln -sf "$(pwd)/i3" ~/.config/i3
+ln -sf "$(pwd)/kitty" ~/.config/kitty
+ln -sf "$(pwd)/picom" ~/.config/picom
 
 echo "[*] Setting up battery warning script..."
 mkdir -p ~/.local/bin
-cp batteryL20.sh ~/.local/bin/
+ln -sf "$(pwd)/batteryL20.sh" ~/.local/bin/batteryL20.sh
 chmod +x ~/.local/bin/batteryL20.sh
 
 echo "[*] Enabling TLP power management service..."
