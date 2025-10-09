@@ -7,7 +7,7 @@ sudo pacman -Syu --noconfirm
 echo "[*] Installing official packages..."
 sudo pacman -S --needed --noconfirm - < packages.txt
 
-echo "[*] Checking..."
+echo "[*] Checking for yay..."
 if ! command -v yay &> /dev/null; then
     echo "[*] Installing yay..."
     git clone https://aur.archlinux.org/yay.git
@@ -44,5 +44,9 @@ fi
 echo "[*] Setting up X session..."
 echo "exec i3" > ~/.xinitrc
 chmod +x ~/.xinitrc
+
+echo "[*] Configuring Git user..."
+git config --global user.name "mateusabrahao"
+git config --global user.email "mateusabrahao290@gmail.com"
 
 echo "[*] Configuration completed!"
