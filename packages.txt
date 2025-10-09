@@ -19,3 +19,4 @@ zathura
 xss-lock
 network-manager-applet
 jack2
+less
