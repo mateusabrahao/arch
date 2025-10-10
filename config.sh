@@ -42,10 +42,7 @@ if [ ! -f ~/Pictures/wallpaper.jpg ]; then
 fi
 
 echo "[*] Setting up X session..."
-cat > ~/.xinitrc << 'EOF'
-setxkbmap -model abnt2 -layout br -variant abnt2
-exec i3
-EOF
+echo "exec i3" > ~/.xinitrc
 chmod +x ~/.xinitrc
 
 echo "[*] Configuring Git user..."
