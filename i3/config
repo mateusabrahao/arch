@@ -166,6 +166,8 @@ bindsym Print exec --no-startup-id scrot ~/Pictures/screenshot_%wx%h_%Y-%m-%d_%H
 # selectable screenshot
 bindsym Mod1+Print exec --no-startup-id scrot -s ~/Pictures/screenshot_%wx%h_%Y-%m-%d_%H-%M-%S.png
 
+# keyboard layout
+exec_always setxkbmap -model abnt2 -layout br -variant abnt2
 
 # Disable window titlebars entirely
 for_window [class="^.*"] border pixel 2
@@ -197,7 +199,6 @@ exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 # bindsym XF86MonBrightnessDown exec light -U 10
 bindsym XF86MonBrightnessDown exec brightnessctl s 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +5%
-
 
 exec --no-startup-id i3-msg 'workspace 1:Web; exec /usr/bin/firefox'
 
