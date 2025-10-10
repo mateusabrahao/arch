@@ -20,3 +20,10 @@ xss-lock
 network-manager-applet
 jack2
 less
+xorg-server
+xorg-xev
+xorg-xinit
+xorg-xinput
+xorg-xprop
+xorg-xrandr
+xorg-xsetroot
