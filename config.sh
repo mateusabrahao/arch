@@ -45,8 +45,4 @@ echo "[*] Setting up X session..."
 echo "exec i3" > ~/.xinitrc
 chmod +x ~/.xinitrc
 
-echo "[*] Configuring Git user..."
-git config --global user.name "mateusabrahao"
-git config --global user.email "mateusabrahao290@gmail.com"
-
 echo "[*] Configuration completed!"
