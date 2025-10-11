@@ -164,7 +164,7 @@ bar {
 bindsym Print exec --no-startup-id scrot ~/Pictures/screenshot_%wx%h_%Y-%m-%d_%H-%M-%S.png
 
 # selectable screenshot
-bindsym Mod1+Print exec --no-startup-id scrot -s ~/Pictures/screenshot_%wx%h_%Y-%m-%d_%H-%M-%S.png
+bindsym $mod+Print exec --no-startup-id scrot -s ~/Pictures/screenshot_%wx%h_%Y-%m-%d_%H-%M-%S.png
 
 # keyboard layout
 exec_always setxkbmap -model abnt2 -layout br -variant abnt2
@@ -173,7 +173,7 @@ exec_always setxkbmap -model abnt2 -layout br -variant abnt2
 for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 7
+gaps inner 4
 gaps outer 2
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
