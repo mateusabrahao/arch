@@ -86,6 +86,9 @@ else
   
             rpm_policy=$(cat "$rpm_policy_file" 2>/dev/null || echo "unknown")  
             runtime_pm=$(cat "$runtime_pm_file" 2>/dev/null || echo "unknown")
+            if [ "$rpm_policy" != "max_performance" ] || [ "$runtime_pm" != "on" ]; then
+        exit 1
+    fi
         done  
     fi  
 fi  
