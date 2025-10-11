@@ -1,15 +1,15 @@
 #!/bin/bash
 set -e
 
-echo "* Updating system..."
+echo "> Updating system..."
 sudo pacman -Syu --noconfirm
 
-echo "* Installing official packages..."
+echo "> Installing official packages..."
 sudo pacman -S --needed --noconfirm - < packages.txt
 
-echo "* Checking for yay..."
+echo "> Checking for yay..."
 if ! command -v yay &> /dev/null; then
-    echo "* Installing yay..."
+    echo "> Installing yay..."
     git clone https://aur.archlinux.org/yay.git
     cd yay
     makepkg -si --noconfirm
@@ -17,35 +17,35 @@ if ! command -v yay &> /dev/null; then
     rm -rf yay
 fi
 
-echo "* Installing AUR packages..."
+echo "> Installing AUR packages..."
 yay -S --needed - < aur.txt
 
-echo "* Setting up configuration files..."
+echo "> Setting up configuration files..."
 mkdir -p ~/.config
 ln -sf "$(pwd)/i3" ~/.config/i3
 ln -sf "$(pwd)/kitty" ~/.config/kitty
 ln -sf "$(pwd)/picom" ~/.config/picom
 
-echo "* Setting up battery warning script..."
+echo "> Setting up battery warning script..."
 mkdir -p ~/.local/bin
 ln -sf "$(pwd)/batteryL20.sh" ~/.local/bin/batteryL20.sh
 chmod +x ~/.local/bin/batteryL20.sh
 
-echo "* Enabling tlp power management service..."
+echo "> Enabling tlp power management service..."
 sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
 
-echo "* Setting up wallpaper..."
+echo "> Setting up wallpaper..."
 mkdir -p ~/Pictures
 if [ ! -f ~/Pictures/wallpaper.jpg ]; then
     cp "$(pwd)/wallpaper.jpg" ~/Pictures/wallpaper.jpg
 fi
 
-echo "* Setting up X session..."
+echo "> Setting up X session..."
 echo "exec i3" > ~/.xinitrc
 chmod +x ~/.xinitrc
 
-echo "* Optimizing disk power settings..."
+echo "> Optimizing disk power settings..."
 mapfile -t hdds < <(lsblk -ndo NAME,TYPE,ROTA | awk '$2=="disk" && $3=="1" && $1 !~ /^nvme/ {print "/dev/"$1}')  
 if [ ${#hdds[@]} -eq 0 ]; then  
     exit 0  
@@ -96,4 +96,4 @@ for disk in "${hdds[@]}"; do
     fi  
 done
 
-echo "* Configuration completed!"
+echo "> Configuration completed!"
