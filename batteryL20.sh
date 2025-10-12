@@ -23,8 +23,8 @@ while true; do
         if [[ "$STATUS" == "Discharging" && "$LEVEL" -le "$THRESHOLD" ]]; then
             LAST_STATE=$(<"$STATE_FILE")
             if [ "$LAST_STATE" -ne 1 ]; then
-                twmnc --title "⚠️  Low Battery" \
-                      --content "Current level: ${LEVEL}% — please connect the charger." \
+                twmnc --title "Warning" \
+                      --content "Battery is getting low!" \
                       --timeout 8000 \
                       --id "battery_low"
                 echo "1" > "$STATE_FILE"
