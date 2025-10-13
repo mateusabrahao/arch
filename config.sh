@@ -44,7 +44,19 @@ fi
 echo "> Setting up X session..."    
 echo "exec i3" > ~/.xinitrc    
 chmod +x ~/.xinitrc    
-    
+
+echo "> Setting up touchpad..."
+touchpad_conf="/etc/X11/xorg.conf.d/30touchpad.conf"
+sudo mkdir -p "$(dirname "$touchpad_conf")"
+sudo tee "$touchpad_conf" > /dev/null <<'EOF'
+Section "InputClass"
+    Identifier "touchpad"
+    MatchIsTouchpad "on"
+    Driver "libinput"
+    Option "Tapping" "on"
+EndSection
+EOF
+
 echo "> Optimizing disk power settings..."  
 mapfile -t hdds < <(lsblk -ndo NAME,TYPE,ROTA | awk '$2=="disk" && $3=="1" && $1 !~ /^nvme/ {print "/dev/"$1}')  
 if [ ${#hdds[@]} -eq 0 ]; then  
