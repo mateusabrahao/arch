@@ -27,3 +27,4 @@ xorg-xinput
 xorg-xprop
 xorg-xrandr
 xorg-xsetroot
+xf86-input-libinput
