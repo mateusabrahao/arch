@@ -1,5 +1,5 @@
 #!/bin/bash
-# checks if any battery is below 20% and sends notification via twmnc every 5 minutes
+# checks if any battery is below 20% and sends notification via twmnc
 
 THRESHOLD=20
 NOTIFY_SENT=0
@@ -11,7 +11,7 @@ i3status | while read -r line; do
 
         if [ "$STATUS" = "Discharging" ]; then
             if [ "$LEVEL" -le "$THRESHOLD" ] && [ "$NOTIFY_SENT" -eq 0 ]; then
-                twmnc --title "Battery Warning" --content "Battery low: ${LEVEL}%"
+                twmnc --title "Battery Warning" --content "Battery is getting low: ${LEVEL}%"
                 NOTIFY_SENT=1
             elif [ "$LEVEL" -gt "$THRESHOLD" ]; then
                 NOTIFY_SENT=0
