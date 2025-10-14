@@ -1,3 +1,5 @@
+@import url("EdgyArc-fr/main.css");
+
 /* Make the sidebar button behave as if it's always unchecked (otherwise it's always active when Sidebery is shown) */
 #sidebar-button[checked] {
   .toolbarbutton-icon {
