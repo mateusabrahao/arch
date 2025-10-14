@@ -50,3 +50,4 @@ xorg-xrandr
 xorg-xsetroot
 xss-lock
 zathura
+unzip
