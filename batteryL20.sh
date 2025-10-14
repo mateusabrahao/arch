@@ -1,37 +1,25 @@
 #!/bin/bash
 # checks if any battery is below 20% and sends notification via twmnc every 5 minutes
 
-set -euo pipefail
-
 THRESHOLD=20
-CHECK_INTERVAL=300
-STATE_FILE="/tmp/battery_notify_state"
+NOTIFY_SENT=0
 
-if [ ! -f "$STATE_FILE" ]; then
-    echo "0" > "$STATE_FILE"
-fi
+i3status | while read -r line; do
+    if [[ $line =~ ([0-9]+)% ]]; then
+        LEVEL=${BASH_REMATCH[1]}
+        STATUS=$(echo "$line" | grep -Eo "Discharging|Charging|Full|Unknown")
 
-while true; do
-    for BAT in /sys/class/power_supply/BAT*/; do
-        [ -d "$BAT" ] || continue
-
-        LEVEL=$(<"${BAT}/capacity")
-        STATUS=$(<"${BAT}/status" 2>/dev/null || echo "Unknown")
-
-        [[ "$LEVEL" =~ ^[0-9]+$ ]] || continue
-
-        if [[ "$STATUS" == "Discharging" && "$LEVEL" -le "$THRESHOLD" ]]; then
-            LAST_STATE=$(<"$STATE_FILE")
-            if [ "$LAST_STATE" -ne 1 ]; then
-                twmnc --title "Warning" \
-                      --content "Battery is getting low!" \
-                      --timeout 8000 \
-                      --id "battery_low"
-                echo "1" > "$STATE_FILE"
+        if [ "$STATUS" = "Discharging" ]; then
+            if [ "$LEVEL" -le "$THRESHOLD" ] && [ "$NOTIFY_SENT" -eq 0 ]; then
+                twmnc --title "Battery Warning" --content "Battery low: ${LEVEL}%"
+                NOTIFY_SENT=1
+            elif [ "$LEVEL" -gt "$THRESHOLD" ]; then
+                NOTIFY_SENT=0
             fi
         else
-            echo "0" > "$STATE_FILE"
+            NOTIFY_SENT=0
         fi
-    done
-    sleep "$CHECK_INTERVAL"
+    fi
+
+    echo "$line"
 done
