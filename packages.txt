@@ -41,7 +41,6 @@ twmn-git
 vim
 xautolock
 xclip
-xf86-video-intel
 xorg-server
 xorg-xev
 xorg-xinit
