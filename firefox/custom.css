@@ -14,7 +14,10 @@
 }
 
 html {
-  --custom-bg: #f5f5f5;
+  --custom-bg: light-dark(
+    color-mix(in srgb, var(--toolbar-bgcolor) 90%, white),
+    color-mix(in srgb, var(--toolbar-bgcolor) 90%, black)
+  );
 }
 
 body {
