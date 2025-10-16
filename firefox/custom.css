@@ -14,10 +14,7 @@
 }
 
 html {
-  --custom-bg: light-dark(
-    color-mix(in srgb, var(--toolbar-bgcolor) 99,22%, white),
-    color-mix(in srgb, var(--toolbar-bgcolor) 99,22%, black)
-  );
+  --custom-bg: light-dark(#f5f5f5, #3d3d3d)
 }
 
 body {
