@@ -27,6 +27,7 @@
     "subPanelRecentlyClosedBar": false,
     "subPanelBookmarks": true,
     "subPanelHistory": true,
+    "subPanelSearch": true,
     "groupLayout": "grid",
     "containersSortByName": false,
     "skipEmptyPanels": false,
