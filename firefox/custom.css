@@ -44,9 +44,9 @@ html:not([privatebrowsingmode="temporary"]) #navigator-toolbox {
   width: 100%;
 }
 
-html:not([privatebrowsingmode="temporary"]) #sidebar-box {
+/* html:not([privatebrowsingmode="temporary"]) #sidebar-box {
   background: var(--custom-bg) !important;
-}
+} */
 
 html:not([privatebrowsingmode="temporary"]) #sidebar-splitter {
   border: none !important;
