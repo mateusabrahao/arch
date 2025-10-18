@@ -77,7 +77,7 @@
     "moveNewTabActivePin": "start",
     "pinnedTabsPosition": "panel",
     "pinnedTabsList": false,
-    "pinnedAutoGroup": false,
+    "pinnedAutoGroup": true,
     "pinnedNoUnload": true,
     "pinnedForcedDiscard": false,
     "tabsTree": true,
