@@ -95,8 +95,8 @@ html:not([privatebrowsingmode="temporary"]) #sidebar-header {
 }
 
 html:not([privatebrowsingmode="temporary"]) #sidebar-box {
-  --uc-sidebar-width: 60px;
-  --uc-sidebar-hover-width: 360px;
+  --uc-sidebar-width: 50px;
+  --uc-sidebar-hover-width: 350px;
   position: relative;
   min-width: var(--uc-sidebar-width) !important;
   width: var(--uc-sidebar-width) !important;
