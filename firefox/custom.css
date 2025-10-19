@@ -121,7 +121,7 @@ html:not([privatebrowsingmode="temporary"]) #sidebar-box:hover > .sidebar-browse
 }
 
 html:not([privatebrowsingmode="temporary"]) .sidebar-panel {
-  background-color: transparent !important;
+  background-color: var(--custom-bg) !important;
   color: var(--newtab-text-primary-color) !important;
 }
 
