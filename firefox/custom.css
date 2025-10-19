@@ -128,3 +128,7 @@ html:not([privatebrowsingmode="temporary"]) .sidebar-panel {
 #window-modal-dialog::backdrop {
   background-color: transparent !important;
 }
+
+#personal-bookmarks, #PlacesToolbar, #PlacesToolbarItems {
+  display: none !important;
+}
