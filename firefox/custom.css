@@ -91,7 +91,7 @@ html:not([privatebrowsingmode="temporary"]) #sidebar-header {
 
 #urlbar:not([breakout-extend]) #urlbar-background {
   background: none !important;
-  background-color: transparent !important;
+  background-color: var(--custom-bg) !important;
 }
 
 html:not([privatebrowsingmode="temporary"]) #sidebar-box {
