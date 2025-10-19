@@ -14,7 +14,7 @@
 }
 
 html {
-  --custom-bg: light-dark(#f5f5f5, #222222)
+  --custom-bg: light-dark(#f5f5f5, #222222);
 }
 
 body {
@@ -44,9 +44,9 @@ html:not([privatebrowsingmode="temporary"]) #navigator-toolbox {
   width: 100%;
 }
 
-/* html:not([privatebrowsingmode="temporary"]) #sidebar-box {
+html:not([privatebrowsingmode="temporary"]) #sidebar-box {
   background: var(--custom-bg) !important;
-} */
+}
 
 html:not([privatebrowsingmode="temporary"]) #sidebar-splitter {
   border: none !important;
@@ -91,7 +91,7 @@ html:not([privatebrowsingmode="temporary"]) #sidebar-header {
 
 #urlbar:not([breakout-extend]) #urlbar-background {
   background: none !important;
-  background-color: var(--custom-bg) !important;
+  background-color: transparent !important;
 }
 
 html:not([privatebrowsingmode="temporary"]) #sidebar-box {
@@ -121,18 +121,6 @@ html:not([privatebrowsingmode="temporary"]) #sidebar-box:hover > .sidebar-browse
 }
 
 html:not([privatebrowsingmode="temporary"]) .sidebar-panel {
-  background-color: var(--custom-bg) !important;
-  color: var(--newtab-text-primary-color) !important;
-}
-
-#window-modal-dialog::backdrop {
   background-color: transparent !important;
-}
-
-#personal-bookmarks, #PlacesToolbar, #PlacesToolbarItems {
-  display: none !important;
-}
-
-:root {
-  --newtab-background-color: light-dark(#ffffff, #222222) !important;
+  color: var(--newtab-text-primary-color) !important;
 }
