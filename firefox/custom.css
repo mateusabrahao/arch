@@ -124,3 +124,7 @@ html:not([privatebrowsingmode="temporary"]) .sidebar-panel {
   background-color: transparent !important;
   color: var(--newtab-text-primary-color) !important;
 }
+
+#window-modal-dialog::backdrop {
+  background-color: transparent !important;
+}
