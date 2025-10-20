@@ -194,9 +194,9 @@ url-prefix("about:home") {
     }
   }
 
-  .icon-settings {
+  /*.icon-settings {
     background-image: url("../icons/settings.svg") !important;
-  }
+  } */
 
   /* Top sites tiles. */
   .top-site-outer {
@@ -350,7 +350,7 @@ url-prefix("about:home") {
       top: 20px;
       height: 32px;
       aspect-ratio: 1 / 1;
-      background: center / contain url("../icons/account-private.svg");
+      /*background: center / contain url("../icons/account-private.svg");*/
       border-radius: 99px;
     }
   }
