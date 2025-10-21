@@ -52,16 +52,17 @@ width: 26px !important;
 height: 24px !important;
 }
 
-/* Default navigation icons (custom ones commented out) */
+/* Custom navigation icons */
 :root #back-button {
-/* list-style-image: url("icons/arrow.svg") !important; */
+list-style-image: url("icons/arrow.svg") !important;
 transform: rotate(180deg);
 }
 
 :root #forward-button {
-/* list-style-image: url("icons/arrow.svg") !important; */
+list-style-image: url("icons/arrow.svg") !important;
 }
 
+/* Firefox Account button scaling */
 #fxa-toolbar-menu-button {
 transform: scale(0.8) !important;
 }
