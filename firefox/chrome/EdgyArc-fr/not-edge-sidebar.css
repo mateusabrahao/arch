@@ -1,6 +1,0 @@
-#sidebar-box {
-  padding: 0px !important;
-
-  margin-block-end: calc(-1 * var(--uc-tweak-rounded-corners-padding));
-  margin-inline-start: calc(-1 * var(--uc-tweak-rounded-corners-padding));
-}
