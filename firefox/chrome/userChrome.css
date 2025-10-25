@@ -1,10 +1,8 @@
 /* Edge-Frfox main files */
-@import url("toolbar/navbar.css");
 @import url("toolbar/personalbar.css");
 @import url("toolbar/findbar.css");
 @import url("toolbar/urlbar.css");
 @import url("global/colors.css") (-moz-pref("af.edgyarc.edge-styles"));
-@import url("global/popup.css");
 @import url("global/browser.css");
 @import url("global/tree.css");
 
