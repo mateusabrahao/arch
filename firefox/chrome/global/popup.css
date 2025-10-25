@@ -69,9 +69,9 @@
   padding-inline-start: calc(16px + var(--uc-arrowpanel-menuicon-margin-inline)) !important;
 }
 
-.subviewbutton > .toolbarbutton-icon {
+/*.subviewbutton > .toolbarbutton-icon {
   width: 16px !important;
-}
+}*/
 
 /* firefox profile avatar in appmenu */
 #appMenu-fxa-label2::before {
@@ -156,17 +156,17 @@
   background-color: var(--panel-item-active-bgcolor) !important;
 }
 
-#appMenu-zoomReduce-button2 > .toolbarbutton-icon,
+/*#appMenu-zoomReduce-button2 > .toolbarbutton-icon,
 #appMenu-zoomEnlarge-button2 > .toolbarbutton-icon {
   fill: currentColor !important;
   stroke: none !important;
-}
+}*/
 
-#appMenu-zoomReset-button2 > .toolbarbutton-text,
+/*#appMenu-zoomReset-button2 > .toolbarbutton-text,
 #appMenu-fullscreen-button2 > .toolbarbutton-icon {
   background-color: transparent !important;
   padding: 0 !important;
-}
+}*/
 
 .subviewbutton[shortcut]::after {
   opacity: 0.7 !important;
@@ -349,11 +349,11 @@
     display: none !important;
   }
 
-  /* Use smaller toolbar extension icon if available. */
+  /* Use smaller toolbar extension icon if available.
   toolbaritem:is([overflowedItem="true"], [cui-areatype="panel"]) > .webextension-browser-action {
     list-style-image: var(--webextension-toolbar-image, var(--webextension-menupanel-image, inherit)) !important;
   }
-}
+}*/
 
 /* Use smaller font-size in extensions menu on Windows. */
 @media (-moz-platform: windows) {
